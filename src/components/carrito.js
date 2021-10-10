@@ -1,8 +1,14 @@
-import React from 'react';
-import carro from './img/compras.png';
+import {FaShoppingCart} from 'react-icons/fa';
+import runaway from './img/runaway2.png';
 
-export const Carrito = ({imgCarrito}) =>{
+export const Carrito = ({ImgCarrito}) =>{
     return(
-        <img src= {carro} alt="carrito de compras" height="40px" width="40px"/>
+        <FaShoppingCart className="icon"/>
+    )
+    
+}
+export const Logo = ({}) =>{
+    return(
+        <img src= {runaway} alt="Logo de pagina" height="60px" width="280px"/>
     )
 }
