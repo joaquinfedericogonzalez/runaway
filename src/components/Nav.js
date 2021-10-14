@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import {Carrito} from './carrito';
 import {Logo} from './carrito';
 
@@ -14,16 +15,16 @@ export const Nav = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><b>INICIO</b></a>
+                                <Link className="nav-link" to="/"><b>INICIO</b></Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><b>PRODUCTOS</b></a>
+                                <Link className="nav-link" to="/productos"><b>PRODUCTOS</b></Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><b>ENVIOS</b></a>
+                                <Link className="nav-link" to="/envios"><b>ENVIOS</b></Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><b>CONTACTO</b></a>
+                                <Link className="nav-link" to="/contactos"><b>CONTACTO</b></Link>
                             </li>
                             
                         </ul>
