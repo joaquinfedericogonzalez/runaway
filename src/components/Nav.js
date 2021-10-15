@@ -29,7 +29,7 @@ export const Nav = () => {
                             
                         </ul>
                     </div>
-                    <a href="#"><Carrito/></a>
+                    <Link className="nav-link" to="/carrito"><Carrito/></Link>
                 </nav>
             </div>
             
