@@ -5,7 +5,7 @@ export const Item = ({item}) =>{
     console.log(item)
     return(
             <div >
-                <Card style={{ width: '18rem' }} className="m-3">
+                <Card style={{ width: '18rem' }} className="my-3">
                     <Card.Img variant="top" src={item.image} />
                     <Card.Body>
                         <Card.Title>{item.name}</Card.Title>

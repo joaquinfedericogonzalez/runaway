@@ -24,7 +24,7 @@ export const Nav = () => {
                                 <Link className="nav-link" to="/envios"><b>ENVIOS</b></Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/contactos"><b>CONTACTO</b></Link>
+                                <Link className="nav-link" to="/contacto"><b>CONTACTO</b></Link>
                             </li>
                             
                         </ul>
