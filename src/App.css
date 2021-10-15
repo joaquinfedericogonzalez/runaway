@@ -54,16 +54,9 @@
   transform: scale(1.1);
 }
 .navbar-toggler{
-  background-color:#D9D9D9 ;
+  background-color:#A3D702;
   text-shadow: 0 3px 3px black, 0 0 0 #000;
-}
-.navbar-toggler:hover{
-  background-color: black;
-  transition: 0.3s;
-  color: #D9D9D9;
-}
-.navbar-collapse:hover{
-  color: #D9D9D9;
+  box-shadow: 0 0px 20px 0 rgba(0,0,0,0.80), 0 4px 10px 0 rgba(0,0,0,0.50);
 }
 .icon{
   color: #D9D9D9;
