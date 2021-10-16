@@ -2,20 +2,20 @@ export const stock = [
     {
     id:1,
         precio:1200,
-        name: "Blazer Oversize - Casual Sport",
-        image: "https://images.pexels.com/photos/8989595/pexels-photo-8989595.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        name: "Pantalon Casual - Velvet Blue",
+        image: "https://images.pexels.com/photos/6982358/pexels-photo-6982358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         detalle: "Vino tinto proviniente de La Rioja - Argentina, cosecha 2017."
     },
     {id:2,
-        precio:3200,
-        name: "Conjunto Sport - Back to 60s",
-        image: "https://images.pexels.com/photos/6474585/pexels-photo-6474585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        precio:2700,
+        name: "Blazer Oversize - Casual Sport",
+        image: "https://images.pexels.com/photos/8989595/pexels-photo-8989595.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
         detalle: "Es un Cabernet Sauvignon con origen chileno, cosecha 1972."
     },
     {id:3,
-        precio:2700,
-        name: "Pantalon Casual - Velvet Blue",
-        image: "https://images.pexels.com/photos/6982358/pexels-photo-6982358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        precio:3200,
+        name: "Conjunto Sport - Back to 60s",
+        image: "https://images.pexels.com/photos/6474585/pexels-photo-6474585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         detalle: "Vino Malbec oriundo de Burgos - España, cosecha 1995."
     },
     { id:4,
