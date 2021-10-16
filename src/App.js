@@ -15,16 +15,20 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Nav/>
-        <ItemListContainer titulo="Nuestro catalogo"/>
+        
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <h1>Pagina de Inicio</h1>
           </Route>
           <Route exact path="/productos">
             <h1>Pagina de Productos</h1>
+            <ItemListContainer titulo="Nuestro catalogo"/>
           </Route>
           <Route exact path="/envios">
             <h1>Pagina de Envios</h1>
+          </Route>
+          <Route exact path="/contacto">
+            <h1>Pagina de Contacto</h1>
           </Route>
         </Switch>
       </BrowserRouter>
