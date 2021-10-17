@@ -7,7 +7,7 @@ export const Carrito = ({ImgCarrito}) =>{
     )
     
 }
-export const Logo = ({}) =>{
+export const Logo = ({ImgLogo}) =>{
     return(
         <img src= {runaway} alt="Logo de pagina" height="60px" width="280px"/>
     )
