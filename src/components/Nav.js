@@ -29,13 +29,13 @@ export const Nav = () => {
                                 <Link className="nav-link" exact to="/contacto"><b>CONTACTO</b></Link>
                             </li>
                             <b><NavDropdown title="MAS PRODUCTOS" id="basic-nav-dropdown">
-                                    <NavDropdown.Item><Link className="nav-link" exact to="/productos/pantalones"><b>PANTALONES</b></Link></NavDropdown.Item>
+                                    <NavDropdown.Item className="fondo"><Link className="nav-link" exact to="/productos/pantalones"><b>PANTALONES</b></Link></NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item><Link className="nav-link" exact to="/productos/mochilas"><b>MOCHILAS</b></Link></NavDropdown.Item>
+                                    <NavDropdown.Item className="fondo"><Link className="nav-link" exact to="/productos/mochilas"><b>MOCHILAS</b></Link></NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item><Link className="nav-link" exact to="/productos/blazers y conjuntos"><b>BLAZERS - CONJUNTOS</b></Link></NavDropdown.Item>
+                                    <NavDropdown.Item className="fondo"><Link className="nav-link" exact to="/productos/blazers y conjuntos"><b>BLAZERS - CONJUNTOS</b></Link></NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item><Link className="nav-link" exact to="/productos/camperas"><b>CAMPERAS</b></Link></NavDropdown.Item>
+                                    <NavDropdown.Item className="fondo"><Link className="nav-link" exact to="/productos/camperas"><b>CAMPERAS</b></Link></NavDropdown.Item>
                             </NavDropdown></b>
                         </ul>
                     </div>

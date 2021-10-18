@@ -37,7 +37,7 @@ export const stock = [
     },
     {id:6,
         price:1500,
-        name: "Campera Old School - Turquoise",
+        name: "Campera - Old School",
         image: "https://images.pexels.com/photos/6982362/pexels-photo-6982362.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         detail: "Campera estilo vintage reciclada.",
         category: "camperas"
