@@ -2,16 +2,16 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const Item = ({item}) =>{
-    console.log(item)
+export const Item = ({id,image,name,price}) =>{
+    //console.log(item)
     return(
             <div  >
                 <Card className="card" border="dark" style={{ width: '18rem' }}>
                     <Card.Body>
-                        <Card.Img variant="top" src={item.image}/>
-                        <Card.Title>{item.name}</Card.Title>
-                        <Card.Text>Precio: ${item.price}</Card.Text>
-                        <Link to={`/detail/${item.id}`}>
+                        <Card.Img variant="top" src={image}/>
+                        <Card.Title>{name}</Card.Title>
+                        <Card.Text>Precio: ${price}</Card.Text>
+                        <Link to={`/detail/${id}`}>
                             <Button variant="dark">Ver mas</Button>
                         </Link>
                     </Card.Body>
