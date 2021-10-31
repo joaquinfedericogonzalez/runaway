@@ -39,7 +39,7 @@
 
 
 .navbar{
-  background-color: #A3D702;
+  background-color: black;
   
 }
 .navbar-nav .nav-item .nav-link {
@@ -49,7 +49,7 @@
 }
 
 .navbar-nav .nav-item .nav-link:hover{
-  color: black;
+  color: #A3D702;
   transition: 0.3s;
   transform: scale(1.1);
 }
@@ -64,27 +64,38 @@
   font-size: 40px;
 }
 .icon:hover{
-  color: #000;
+  color: #A3D702;
   transition: 0.3s;
   transform: scale(1.1);
 }
 .btn{
-  background-color: #A3D702;
+  background-color: black;
   text-shadow: 0 1px 2px black, 0 0 0 #000;
   font-family: 'Josefin Sans', sans-serif;
+  color: white;
 }
 .btn:hover{
   transform: scale(1.1);
   transition: 0.3s;
   border-color: none;
+  background-color: #A3D702;
 }
 .card{
   margin: 35px;
   box-shadow: 0 0px 20px 0 rgba(0,0,0,0.80), 0 4px 10px 0 rgba(0,0,0,0.50);
 }
 .fondo{
-  background-color: #A3D702;
+  background-color: black;
 }
 .fondo a:hover{
-  background-color: cadetblue;
+  background-color: #A3D702;
+}
+.tamaño{
+  width: 200px;
+  height: 300px;
+}
+.carro{
+  display: block;
+  justify-content: center;
+  margin: 30px;
 }

@@ -1,14 +1,28 @@
 import Button from '@restart/ui/esm/Button';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 import { BsFillTrashFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
+import { CartCounter } from './CartCount';
 
 
-export const CartScreen = () =>{
+export const CartScreen = ({id,name,detail,price,category,image,stock}) =>{
 
     const {carrito, vaciarCarrito, removeItem, calcularTotal} = useContext(CartContext)
 
+    const [cant, setCant] = useState (0)
+
+    const addItem = () => {
+        const newItem = {
+            id, 
+            name,
+            detail,
+            price,
+            category,
+            image,
+            stock
+        }
+    }
 
     return(
         <div className="container my-5">
@@ -31,11 +45,12 @@ export const CartScreen = () =>{
                         <hr/>
                         {
                             carrito.map( (prod) => (
-                                <div>
-                                    <img src="{prod.image}"/>
+                                <div className="carro">
+                                    <img className="tamaño" src={prod.image}/>
                                     <h4>{prod.name}</h4>
                                     <p>Cantidad: {prod.cantidad}</p>
                                     <p>Precio:{prod.price * prod.cantidad}</p>
+                                    <CartCounter cant={cant} modify={setCant} max={stock}/>
                                     <Button  className="btn btn-danger" onClick={() => removeItem (prod.id) }>
                                         <BsFillTrashFill/>
                                     </Button>

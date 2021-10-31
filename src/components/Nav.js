@@ -28,7 +28,7 @@ export const Nav = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" exact to="/contacto"><b>CONTACTO</b></Link>
                             </li>
-                            <b><NavDropdown title="MAS PRODUCTOS" id="basic-nav-dropdown">
+                            <b><NavDropdown title="CATEGORIAS" id="basic-nav-dropdown">
                                     <NavDropdown.Item className="fondo"><Link className="nav-link" exact to="/productos/pantalones"><b>PANTALONES</b></Link></NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item className="fondo"><Link className="nav-link" exact to="/productos/mochilas"><b>MOCHILAS</b></Link></NavDropdown.Item>
