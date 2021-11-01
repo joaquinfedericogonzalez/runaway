@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router";
-import { pedirProductos } from "../../helpers/pedirProductos";
+import { getFirestore } from "../../firebase/config";
 import { ItemList } from "./ItemList";
 
 
@@ -15,23 +15,32 @@ export const ItemListContainer = ({titulo}) => {
 
 
     useEffect(()=>{
-        // MOCK LLAMANDO A LA API
         setLoading(true)
+    
+        const db = getFirestore()
+        const productos = categoryId 
+                                        ? db.collection('productos').where('category', '==', categoryId)
+                                        : db.collection('productos')
 
-        pedirProductos()
-            .then((res) => {
-                if(categoryId){
-                    setItems( res.filter(items => items.category === categoryId))
-                }
-                else{
-                    setItems( res )
-                }
+
+            productos.get()
+            .then((Response) =>{
+                const newItems = Response.docs.map((doc) =>{
+                    return {id: doc.id, ...doc.data()}
+
+                })
+                console.log(newItems)
+                setItems(newItems)
             })
-            .catch((err) => console.log(err))
+            .catch( err => console.log(err))
             .finally(() => {
-                setLoading(false)
-            })
-    }, [categoryId])
+                setLoading(false)})
+
+
+        
+
+
+    }, [categoryId, setLoading])
 
     return(
         

@@ -33,7 +33,7 @@ export const ItemDetail = ({id,name,detail,price,category,image,stock}) =>{
             <div className="row">
                 <Card className="card" border="dark" style={{ width: '18rem' }}>
                     <Card.Body>
-                        <Card.Img variant="top" src={image} />
+                        <Card.Img src={image} alt="imagen del producto" />
                         <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>{detail}</Card.Text>
