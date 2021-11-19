@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { ItemCount } from "../../components/ItemCount/ItemCount";
 import { CartContext } from "../context/CartContext";
+import './ItemDetail.css'
 
 export const ItemDetail = ({id,name,detail,price,category,image,stock}) =>{
 

@@ -1,0 +1,22 @@
+.tamaño{
+    width: 200px;
+    height: 300px;
+}
+.carro{
+    display: block;
+    text-align: center;
+    margin: 30px;
+}
+.btn{
+    background-color: black;
+    text-shadow: 0 1px 2px black, 0 0 0 #000;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+.btn:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    border-color: none;
+    background: linear-gradient(#A3D702, black)
+}
+

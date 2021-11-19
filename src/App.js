@@ -1,5 +1,4 @@
 //import logo from './logo.svg';
-import './App.css';
 import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
 import { Nav } from './components/Nav/Nav';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';

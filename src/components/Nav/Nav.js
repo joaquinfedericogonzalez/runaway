@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import {Carrito, Logo} from '../Nav/carrito';
 import { NavDropdown } from "react-bootstrap";
+import './Nav.css'
 
 export const Nav = () => {
     return(
