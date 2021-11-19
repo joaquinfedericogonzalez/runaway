@@ -1,8 +1,9 @@
-import Button from '@restart/ui/esm/Button';
+
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { BsFillTrashFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 
 
 export const CartScreen = () =>{
@@ -47,7 +48,10 @@ export const CartScreen = () =>{
                         <Button className="btn btn-danger" onClick={vaciarCarrito}>
                             Vaciar carrito
                         </Button>
-                    
+                        
+                        <Link to="/checkout" className="btn mx-3">
+                            Finalizar compra
+                        </Link>
                     </>
             }
 

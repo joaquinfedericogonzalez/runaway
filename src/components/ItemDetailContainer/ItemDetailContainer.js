@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Loader } from "../Loader/Loader";
 import { getFirestore } from "../../firebase/config";
 import { ItemDetail } from "./ItemDetail";
+import { UIContext } from "../context/UIContext";
 
 export const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const {loading, setLoading} = useContext(UIContext)
     const {itemId} = useParams()
 
-    console.log(itemId)
     useEffect(()=>{
         setLoading(true)
 
@@ -34,7 +35,8 @@ export const ItemDetailContainer = () => {
     return(
         <div>
             {
-                loading ? <h3>Cargando...</h3>
+                loading 
+                ? <Loader/>
                 : <ItemDetail {...item}/>
             }
 

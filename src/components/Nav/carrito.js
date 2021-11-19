@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import {FaShoppingCart} from 'react-icons/fa';
-import { CartContext } from './context/CartContext';
-import runaway from './img/runaway5.png';
+import { CartContext } from '../context/CartContext';
+import runaway from '../img/runaway5.png';
 
 export const Carrito = () =>{
 

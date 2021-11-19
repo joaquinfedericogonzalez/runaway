@@ -3,7 +3,6 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const Item = ({id,image,name,price}) =>{
-    //console.log(item)
     return(
             <div  >
                 <Card className="card" border="dark" style={{ width: '18rem' }}>

@@ -30,15 +30,15 @@ export const ItemDetail = ({id,name,detail,price,category,image,stock}) =>{
 
     return(
         <div className="container">
-            <div className="row">
-                <Card className="card" border="dark" style={{ width: '18rem' }}>
-                    <Card.Body>
-                        <Card.Img src={image} alt="imagen del producto" />
-                        <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
-                        <Card.Title>{name}</Card.Title>
-                        <Card.Text>{detail}</Card.Text>
-                        <Card.Text>Precio: ${price}</Card.Text>
-                        {IsInCart(id)
+            <div>
+
+            <Card className="text-center" border="dark">
+                <Card.Header><Card.Title>{name}</Card.Title><Card.Img src={image} alt="Imagen del producto"/></Card.Header>
+                <Card.Body>
+                    <Card.Title>{detail}</Card.Title>
+                    <Card.Title>Precio: ${price}</Card.Title>
+                    <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
+                    {IsInCart(id)
                         ? <Link to="/carrito" className="btn"><Button variant="dark">Terminar Compra</Button></Link>
                         :<Button variant="dark" onClick={handleAgregar}>Agregar al carrito</Button>
                         }
@@ -46,7 +46,7 @@ export const ItemDetail = ({id,name,detail,price,category,image,stock}) =>{
                         
                     </Card.Body>
             </Card>
-            
+
             </div>
         </div>
     )
