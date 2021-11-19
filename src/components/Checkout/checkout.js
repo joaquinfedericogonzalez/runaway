@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { Redirect } from "react-router";
 import { UIContext } from "../context/UIContext";
 import { Loader } from "../Loader/Loader";
+import './checkout.css'
 
 
 
@@ -150,7 +151,7 @@ export const Checkout = () =>{
             {loading && <Loader/>}
                 <div>
                     
-                    <h2 className="my-3">¡Ya casi es tuyo, completa los datos para finalizar la compra!</h2>
+                    <h2 className="my-3 text">¡Ya casi es tuyo, completa los datos para finalizar la compra!</h2>
 
 
                     <div className="container my-5">
