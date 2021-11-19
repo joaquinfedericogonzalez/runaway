@@ -1,13 +1,11 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
-import { getFirestore } from "../../firebase/config";
-import firebase from "firebase/app";
-import "firebase/firestore";
 import Swal from "sweetalert2";
 import { Redirect } from "react-router";
 import { UIContext } from "../context/UIContext";
 import { Loader } from "../Loader/Loader";
 import './checkout.css'
+import { generarOrden } from "../../firebase/generarOrden";
 
 
 
@@ -32,7 +30,7 @@ export const Checkout = () =>{
         })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         if(values.nombre.length < 3){
@@ -74,75 +72,31 @@ export const Checkout = () =>{
             })
             return
         }
-
-        const order = {
-            buyer:{
-                ...values
-            },
-            items: carrito.map((el)=>({id: el.id, precio: el.price, cantidad: el.cantidad})),
-            total: calcularTotal(),
-            date: firebase.firestore.Timestamp.fromDate(new Date())
-        }
-        const db = getFirestore()
-        const orders = db.collection('orders')
-        const itemsToUpdate = db.collection('productos')
-            .where(firebase.firestore.FieldPath.documentId(), 'in', carrito.map(el => el.id))
-
-
-        const query = await itemsToUpdate.get()
-
-        const batch = db.batch()
-
-        const outOfStock = []
-
-        query.docs.forEach((doc)=>{
-            const itemInCart = carrito.find(prod => prod.id === doc.id)
-
-            if (doc.data().stock >= itemInCart.cantidad){
-                batch.update(doc.ref, {stock: doc.data().stock - itemInCart.cantidad})
-            }else{
-                outOfStock.push({...doc.data(), id: doc.id})
-            }
-        })
-
-        if (outOfStock.length === 0){
-            batch.commit()
-            setLoading(true)
-            orders.add(order)
-                .then((res) => {
-                    console.log(res.id)
-                
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: '¡Felicidades, tu compra fue realizada!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    vaciarCarrito()
+        setLoading(true)
+        generarOrden(values, carrito, calcularTotal())
+            .then((res)=>{
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: '¡Tu compra fue resgistrada!',
+                    text:`Numero de orden: ${res}`,
+                    showConfirmButton: false,
+                    timer: 1500,
+                    willClose: () => {
+                        vaciarCarrito()
+                    }
                 })
-                .catch((err)=>{
-                    console.log(err.id)
-                    Swal.fire({
-                        icon: 'error',
-                        title: '¡Ha ocurrido un error inesperado!',
-                        text: 'Vuelva a intentarlo nuevamente mas tarde'
-                    })
-                    vaciarCarrito()
-                })
-                .finally(()=>{
-                    setLoading(false)
-                })
-                
-        }else{(
-            Swal.fire({
-                icon: 'error',
-                title: '¡No hay suficiente stock!',
-                titleText: 'Porfavor volve a intentarlo mas tarde',
-                text: outOfStock.map(el => el.name).join(',') 
             })
-        )}
-
+            .catch((err)=>{
+                Swal.fire({
+                    icon: 'error',
+                    title: '¡No hay stock disponible!',
+                    text: `El producto ${err.map(el => el.name).join(',')} no tiene stock disponible para esta compra`,
+                })
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }
 
     return(
