@@ -21,4 +21,4 @@ Tambien se separa por archivos diferentes la logica de la vista usuario para man
 Se desabilitan los campos hasta la respuesta que da firebase sobre el stock, dejandolos asi inutilizables hasta dicha respuesta. Terminada esta compra se regresa al usuario al inicio vaciando dicho carrito para asi estar listo si quiere comprar algo mas despues, sin que su compra anterior se mantenga en el carrito, evitando asi confusiones y compras indeseadas.
 
 ## Link de la pagina hosteada: 
-https://gallant-knuth-0034d2.netlify.app/
+https://runawayclothes.netlify.app
