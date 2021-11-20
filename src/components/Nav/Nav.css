@@ -7,9 +7,14 @@
     font-family: 'Josefin Sans', sans-serif;
     text-shadow: 0 3px 3px black, 0 0 0 #000;
     background: linear-gradient(#A3D702, black);
-    margin: 5px;
+    /*margin: 5px;*/
   }
   
+.nav-link b .nav-item{
+  margin: "" ;
+  padding: "";
+}
+
   .navbar-nav .nav-item .nav-link:hover{
     color: black;
     transition: 0.3s;

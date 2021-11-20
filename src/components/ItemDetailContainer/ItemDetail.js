@@ -38,7 +38,8 @@ export const ItemDetail = ({id,name,detail,price,category,image,stock}) =>{
                 <Card.Body>
                     <Card.Title>{detail}</Card.Title>
                     <Card.Title>Precio: ${price}</Card.Title>
-                    <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
+                    {!IsInCart(id) &&  <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>}
+                    
                     {IsInCart(id)
                         ? <Link to="/carrito" className="btn"><Button variant="dark">Terminar Compra</Button></Link>
                         :<Button variant="dark" onClick={handleAgregar}>Agregar al carrito</Button>

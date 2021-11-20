@@ -1,9 +1,8 @@
-
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
-import { BsFillTrashFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+import ProductCard from './ProductCard';
 import './CartScreen.css'
 
 
@@ -32,16 +31,8 @@ export const CartScreen = () =>{
                         <h2>Resumen de mi compra</h2>
                         <hr/>
                         {
-                            carrito.map( (prod) => (
-                                <div className="carro">
-                                    <img className="tamaño" src={prod.image} alt="imagen producto"/>
-                                    <h4>{prod.name}</h4>
-                                    <p>Cantidad: {prod.cantidad}</p>
-                                    <p>Precio:{prod.price * prod.cantidad}</p>
-                                    <Button  className="btn btn-danger" onClick={() => removeItem (prod.id) }>
-                                        <BsFillTrashFill/>
-                                    </Button>
-                                </div>
+                            carrito.map( (prod, index) => (
+                                <ProductCard prod={prod} onClick={() => removeItem (prod.id)} key={ index + prod.id}/>
                             ) )
                         }
                         <hr/>
