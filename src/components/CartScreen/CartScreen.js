@@ -28,7 +28,7 @@ export const CartScreen = () =>{
                 :
                     <>
                     
-                        <h2>Resumen de mi compra</h2>
+                        <h2>Resumen de compra</h2>
                         <hr/>
                         {
                             carrito.map( (prod, index) => (
